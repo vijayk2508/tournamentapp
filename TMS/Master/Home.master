@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="Master_Home" %>
+
+<%@ Import Namespace="VISE.Web" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!--Title tag here -->
+    <title>PUBG Tournament</title>
+
+    <!--Meta tags here -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="author" name="pubg, tournament, competition">
+    <meta content="Web" description="PUBG tournament organizing team for PUBG players">
+
+
+    <!--Link tag here -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+    <%--<link href="<%= Page.ResolveUrl("~/Resources/css/style.css")%>" rel="stylesheet">--%>
+
+    <%=CNAME.CSS("~/Resources/css/style.css")%>
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!---------Header------------->
+    <section id="upper">
+        <div class="container-fluid">
+            <br>
+            <div class="col-md-1"></div>
+
+            <div class="col-md-3">
+                <asp:Image ID="img1" class="shake" runat="server" Width="60%" />
+
+            </div>
+
+            <div class="col-md-4">
+                <a href="/">
+                    <center>
+                        <asp:Image ID="logo1" class="shake" runat="server"/>
+                    </center>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <asp:HyperLink ID="lnkRegistration" class="btn btn-success btn-block shake btna" NavigateUrl="/" runat="server"><b>Register Me!!</b></asp:HyperLink>
+
+                        <asp:HyperLink ID="lnkJoinGame" class="btn btn-success btn-block shake btna" NavigateUrl="/Login/" runat="server"><b>Join Game</b></asp:HyperLink>
+
+                        <div id="rules" class="text-center">
+                            <span class="txt border">25 Squad Enters<br>
+                                1 Squad Wins</span><br>
+                            <span class="txt blinking">NO EMULATORS</span><br>
+                            <span class="txt blinking">Cash Prize's & PUBG Goodies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------Bottom-------------------->
+    <section id="upper">
+        <div class="container">
+            <div class="col-md-4 bg">
+                <!-------------Content-------------------->
+                <form id="form1" runat="server">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <!-------------Content-------------------->
+                </form>
+            </div>
+
+            <div class="col-md-4">
+            </div>
+
+            <div class="col-md-4">
+                <center>
+                    <asp:Image ID="logo3"  runat="server"/>
+                </center>
+            </div>
+        </div>
+    </section>
+    <!-------------Bottom-------------------->
+
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Master_Admin" %>
+
+<%@ Import Namespace="VISE.Web" %>
+
+<%@ Register Src="~/Admin/AdminUserControl/UCLeftSideBar.ascx" TagPrefix="vwc" TagName="UCLeftSideBar" %>
+
+<%@ Register Src="~/Admin/AdminUserControl/UCTopLeft.ascx" TagPrefix="vwc" TagName="UCTopLeft" %>
+
+<%@ Register Src="~/Admin/AdminUserControl/UCTopRight.ascx" TagPrefix="vwc" TagName="UCTopRight" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- DataTables CSS -->
+    <%=CNAME.CSS("~/Resources/acss/vendor/datatables-plugins/dataTables.bootstrap.css")%>
+
+    <!-- DataTables Responsive CSS -->
+    <%=CNAME.CSS("~/Resources/acss/vendor/datatables-responsive/dataTables.responsive.css")%>
+
+    <!-- Bootstrap Core CSS -->
+    <%=CNAME.CSS("~/Resources/acss/vendor/bootstrap/css/bootstrap.css")%>
+
+    <!-- MetisMenu CSS -->
+    <%=CNAME.CSS("~/Resources/acss/vendor/metisMenu/metisMenu.min.css")%>
+
+    <!-- Custom CSS -->
+    <%=CNAME.CSS("~/Resources/acss/dist/css/sb-admin-2.css")%>
+
+    <!-- Morris Charts CSS -->
+    <%=CNAME.CSS("~/Resources/acss/vendor/morrisjs/morris.css")%>
+
+    <!-- Custom Fonts -->
+    <%=CNAME.CSS("~/Resources/acss/vendor/font-awesome/css/font-awesome.min.css")%>
+
+    <%=CNAME.CSS("~/Resources/css/admin.style.css")%>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+                <vwc:UCTopLeft runat="server" ID="UCTopLeft" />
+
+                <!-- /.navbar-header -->
+
+                <vwc:UCTopRight runat="server" ID="UCTopRight" />
+                <!-- /.navbar-top-links -->
+
+                <vwc:UCLeftSideBar runat="server" ID="UCLeftSideBar" />
+                <!-- /.navbar-static-side -->
+            </nav>
+
+            <div id="page-wrapper">
+                <!-- /.Global Header -->
+
+                <div class="row" style="margin-left: -15px !important">
+
+                    <div class="col-md-6 col-xs-12">
+                        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+
+                        <!-- /.Global Search -->
+                        <div class="search-form">
+                            <div class="form-group has-feedback">
+                                <label for="search" class="sr-only">Search</label>
+                                <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <!-- /.Global Search -->
+
+                    </div>
+
+                </div>
+                <!-- /.Global Header -->
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <footer>
+                <div class="header">
+                    footer
+                </div>
+            </footer>
+        </div>
+        <!-- jQuery -->
+        <%=CNAME.JS("~/Resources/acss/vendor/jquery/jquery.min.js")%>
+        <%=CNAME.JS("~/Resources/acss/vendor/bootstrap/js/bootstrap.min.js")%>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <%=CNAME.JS("~/Resources/acss/vendor/metisMenu/metisMenu.min.js")%>
+
+        <!-- Morris Charts JavaScript -->
+        <%--<%=CNAME.JS("~/Resources/acss/vendor/raphael/raphael.min.js")%>--%>
+        <%--<%=CNAME.JS("~/Resources/acss/vendor/morrisjs/morris.min.js")%>--%>
+        <%--<%=CNAME.JS("~/Resources/acss/data/morris-data.js")%>--%>
+
+
+        <!-- Custom Theme JavaScript -->
+        <%=CNAME.JS("~/Resources/acss/dist/js/sb-admin-2.js")%>
+
+        <!-- DataTables JavaScript -->
+        <%=CNAME.JS("~/Resources/acss/vendor/datatables/js/jquery.dataTables.min.js")%>
+        <%=CNAME.JS("~/Resources/acss/vendor/datatables-plugins/dataTables.bootstrap.min.js")%>
+        <%=CNAME.JS("~/Resources/acss/vendor/datatables-responsive/dataTables.responsive.js")%>
+        <%=CNAME.JS("~/Resources/js/admin.js")%>
+
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+        <script>
+            //$(document).ready(function () {
+            //    $('#dataTables-example').DataTable({
+            //        responsive: true
+            //    });
+            //});
+        </script>
+    </form>
+</body>
+</html>
